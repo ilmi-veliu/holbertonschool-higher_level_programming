@@ -1,13 +1,14 @@
+
 #!/usr/bin/python3
-
 import random
-nb = random.randint(-50 , 100)
+number = random.randint(-10, 10)
+# YOUR CODE HERE
 
-if nb > 0 :
-    print(nb,'is positive')
+if number > 0 :
+    print(number,'is positive')
 
-elif nb == 0 :
-    print(nb,'is zero')
+elif number == 0 :
+    print(number,'is zero')
 
 else:
-    print(nb,'is negative')
+    print(number,'is negative')
