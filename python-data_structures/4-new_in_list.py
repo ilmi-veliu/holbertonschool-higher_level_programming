@@ -9,4 +9,5 @@ def new_in_list(my_list, idx, element):
         return my_list_2
     
     else:
-         my_list_2[3] = element
+         my_list_2[idx] = element
+         return my_list_2
