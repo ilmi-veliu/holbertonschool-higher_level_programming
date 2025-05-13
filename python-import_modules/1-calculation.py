@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-from calculator_1 import add, sub, mul, div
+from calculator_1 import add, sub, mul, div # type: ignore
 
 if __name__ == "__main__":
     a = 10
