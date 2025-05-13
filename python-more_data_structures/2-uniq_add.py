@@ -1,5 +1,5 @@
 def uniq_add(my_list=[]):
-    unique_values = set(my_list)  # enlève les doublons
+    unique_values = set(my_list)
     addition = 0
 
     for i in unique_values:
