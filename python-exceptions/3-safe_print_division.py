@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-def divide(a, b):
-    result = 0
+def safe_print_division(a, b):
     try:
         result = a / b
     except ZeroDivisionError:
