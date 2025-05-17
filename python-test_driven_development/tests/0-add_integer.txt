@@ -1,3 +1,4 @@
+ #!/usr/bin/python3
 """
 Additionne deux entiers (int ou float convertis en int).
 
