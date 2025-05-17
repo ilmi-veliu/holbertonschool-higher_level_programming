@@ -1,26 +1,12 @@
 #!/usr/bin/python3
 """
 Divides all elements of a matrix by a number.
-
-Validates the matrix structure, checks types and dimensions,
-and ensures the divisor is a proper number (not zero, NaN or infinity).
 """
 
 
 def matrix_divided(matrix, div):
     """
-    Divide a matrix by a number, rounded to 2 decimals.
-
-    Args:
-        matrix: List of lists of integers or floats.
-        div: Number (int or float) to divide by.
-
-    Returns:
-        A new matrix with the results rounded to 2 decimal places.
-
-    Raises:
-        TypeError: If the matrix is invalid or div is not a valid number.
-        ZeroDivisionError: If div is 0.
+    Divide matrix by div, round to 2 decimals.
     """
     if not isinstance(matrix, list) or not all(
             isinstance(row, list) for row in matrix):
