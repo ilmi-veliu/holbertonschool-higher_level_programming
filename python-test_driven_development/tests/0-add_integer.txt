@@ -1,0 +1,11 @@
+def add_integer(a, b=98):
+    """
+    Additionne deux entiers (int ou float convertis en int).
+
+    >>> add_integer(2, 3)
+    5
+
+    >>> add_integer("a", 2)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+    """
