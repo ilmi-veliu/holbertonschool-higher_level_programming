@@ -1,3 +1,10 @@
+#!/usr/bin/python3
+"""
+Module contenant la fonction add_integer.
+
+Cette fonction permet d’additionner deux entiers.
+"""
+
 def add_integer(a, b=98):
     """
     Additionne deux entiers (int ou float convertis en int).
@@ -23,3 +30,8 @@ def add_integer(a, b=98):
     Traceback (most recent call last):
     TypeError: b must be an integer
     """
+    if not isinstance(a, (int, float)):
+        raise TypeError("a must be an integer")
+    if not isinstance(b, (int, float)):
+        raise TypeError("b must be an integer")
+    return int(a) + int(b)
