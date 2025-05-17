@@ -20,10 +20,7 @@ def matrix_divided(matrix, div):
     if row_lengths.count(row_lengths[0]) != len(row_lengths):
         raise TypeError("Each row of the matrix must have the same size")
 
-    if not isinstance(div, (int, float)):
-        raise TypeError("div must be a number")
-
-    if div == float('inf') or div == float('-inf') or div != div:
+    if not isinstance(div, (int, float)) or div != div or abs(div) == float('inf'):
         raise TypeError("div must be a number")
 
     if div == 0:
