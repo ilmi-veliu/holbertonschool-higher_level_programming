@@ -86,4 +86,4 @@ class Rectangle:
         """
         Print message on delete.
         """
-        print ("Bye rectangle...")
+    print("Bye rectangle...")
