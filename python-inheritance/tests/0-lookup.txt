@@ -1,3 +1,7 @@
->>> from 0-lookup import lookup
+>>> import importlib.util
+>>> spec = importlib.util.spec_from_file_location("lookup", "./0-lookup.py")
+>>> lookup_module = importlib.util.module_from_spec(spec)
+>>> spec.loader.exec_module(lookup_module)
+>>> lookup = lookup_module.lookup
 >>> lookup("Hello")  # doctest: +ELLIPSIS
 ['__add__', '__class__', ...]
