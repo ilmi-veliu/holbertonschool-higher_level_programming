@@ -1,0 +1,18 @@
+>>> import importlib.util, pathlib, sys
+>>> path = pathlib.Path("1-my_list.py")
+>>> spec = importlib.util.spec_from_file_location("mylist_mod", path)
+>>> mod = importlib.util.module_from_spec(spec)
+>>> sys.modules["mylist_mod"] = mod
+>>> spec.loader.exec_module(mod)
+>>> MyList = mod.MyList
+>>> ml = MyList([3, 1, 4, 2])
+>>> ml.print_sorted()
+[1, 2, 3, 4]
+>>> ml
+[3, 1, 4, 2]
+
+>>> empty = MyList()
+>>> empty.print_sorted()
+[]
+>>> empty
+[]
