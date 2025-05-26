@@ -17,11 +17,3 @@ class MyList(list):
         """
         sorted_list = sorted(self)
         print(sorted_list)
-
-
-if __name__ == "__main__":
-    """
-    Example usage of the MyList class.
-    """
-    my_list = MyList([3, 1, 4, 2])
-    my_list.print_sorted()
