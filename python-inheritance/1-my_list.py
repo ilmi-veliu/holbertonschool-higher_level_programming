@@ -15,8 +15,8 @@ class MyList(list):
         """
         Prints the list in sorted order.
         """
-        panda = sorted(self)
-        print(panda)
+        sorted_list = sorted(self)
+        print(sorted_list)
 
 
 if __name__ == "__main__":
