@@ -1,0 +1,3 @@
+>>> from 0-lookup import lookup
+>>> lookup("Hello")  # doctest: +ELLIPSIS
+['__add__', '__class__', ...]
