@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """
-Module that defines the lookup function.
+This module defines the function lookup.
 """
+
 
 def lookup(obj):
     """
@@ -11,6 +12,6 @@ def lookup(obj):
         obj: The object to inspect.
 
     Returns:
-        List of attributes and methods.
+        List of attributes and methods of the object.
     """
     return dir(obj)
