@@ -1,0 +1,34 @@
+#!/usr/bin/python3
+"""
+This module tests the BaseGeometry class.
+"""
+
+BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+# Create an instance of BaseGeometry
+bg = BaseGeometry()
+
+# Test area() method (should raise Exception)
+try:
+    bg.area()
+except Exception as e:
+    print("[area()] Exception:", e)
+
+# Test integer_validator() with a valid integer
+try:
+    bg.integer_validator("my_var", 10)
+    print("[integer_validator()] Valid integer passed.")
+except Exception as e:
+    print("[integer_validator()] Exception with valid input:", e)
+
+# Test integer_validator() with a non-integer
+try:
+    bg.integer_validator("my_var", "not an int")
+except Exception as e:
+    print("[integer_validator()] Exception with non-integer:", e)
+
+# Test integer_validator() with a non-positive integer
+try:
+    bg.integer_validator("my_var", 0)
+except Exception as e:
+    print("[integer_validator()] Exception with non-positive:", e)
