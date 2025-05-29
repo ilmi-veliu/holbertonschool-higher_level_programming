@@ -1,29 +1,29 @@
 #!/usr/bin/python3
-"""Module qui définit une classe abstraite Animal et ses sous-classes Dog et Cat."""
+"""Module defining an abstract Animal class and its subclasses Dog and Cat."""
 
 from abc import ABC, abstractmethod
 
 
 class Animal(ABC):
-    """Classe abstraite représentant un animal."""
+    """Abstract class representing an animal."""
 
     @abstractmethod
     def sound(self):
-        """Méthode abstraite à implémenter par les sous-classes pour produire un son."""
+        """Abstract method to be implemented by subclasses to produce a sound."""
         pass
 
 
 class Dog(Animal):
-    """Classe représentant un chien."""
+    """Class representing a dog."""
 
     def sound(self):
-        """Retourne le son produit par le chien."""
+        """Returns the sound made by a dog."""
         return "BARK"
 
 
 class Cat(Animal):
-    """Classe représentant un chat."""
+    """Class representing a cat."""
 
     def sound(self):
-        """Retourne le son produit par le chat."""
+        """Returns the sound made by a cat."""
         return "Meow"
