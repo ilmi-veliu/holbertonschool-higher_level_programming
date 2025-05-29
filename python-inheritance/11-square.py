@@ -96,4 +96,4 @@ class Square(Rectangle):
         Returns:
             str: Inherited string representation from Rectangle.
         """
-        return super().__str__()
+        return "[Square] {}/{}".format(self.__size,self.__size)
