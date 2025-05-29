@@ -94,6 +94,6 @@ class Square(Rectangle):
         Return the string representation of the square.
 
         Returns:
-            str: Inherited string representation from Rectangle.
+            str: String with size as width and height.
         """
-        return "[Square] {}/{}".format(self.__size,self.__size)
+        return "[Square] {}/{}".format(self.__size, self.__size)
