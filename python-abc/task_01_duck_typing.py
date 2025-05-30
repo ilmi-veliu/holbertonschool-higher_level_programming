@@ -95,7 +95,7 @@ class Rectangle(Shape):
         Returns:
             float: The perimeter of the rectangle.
         """
-        return 2 * (self.width + self.height)
+        return abs(2 * (self.width + self.height))
 
 
 def shape_info(shape):
