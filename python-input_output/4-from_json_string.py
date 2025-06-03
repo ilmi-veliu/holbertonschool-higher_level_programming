@@ -1,8 +1,12 @@
 #!/usr/bin/python3
+"""The object representation of a JSON"""
+
 import json
 
-def from_json_string(my_str):
+
+def from_json_string(my_string):
     """
-    Return object (Python data structure) represented by JSON string.
+    Return the object represented by a JSON string.
     """
-    return json.loads(my_str)
+    panda = json.loads(my_string)
+    return panda
