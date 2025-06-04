@@ -21,8 +21,3 @@ class Student:
             if hasattr(self, attr):
                 dic_vide[attr] = getattr(self, attr)
         return dic_vide
-
-    
-    def reload_from_json(self, json):
-        for key, value in json.items():
-            setattr(self, key, value)
