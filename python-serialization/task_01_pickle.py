@@ -13,15 +13,21 @@ class CustomObject:
 
     def serialize(self, filename):
         """Serialize the object and save it to a file."""
-        with open(filename, "wb") as file:
-            pickle.dump(self, file)
+        try:
+            with open(filename, "wb") as file:
+                pickle.dump(self, file)
+        except Exception:
+            return None
 
     @classmethod
     def deserialize(cls, filename):
         """Deserialize and return an object from a file."""
-        with open(filename, "rb") as panda:
-            pelo = pickle.load(panda)
-            return pelo
+        try:
+            with open(filename, "rb") as panda:
+                pelo = pickle.load(panda)
+                return pelo
+        except Exception:
+            return None
 
     def display(self):
         """Print object attributes."""
