@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """Module defining the Student class."""
- 
+
 
 class Student:
     """Represents a student."""
@@ -22,7 +22,7 @@ class Student:
                 dic_vide[attr] = getattr(self, attr)
         return dic_vide
 
-    
     def reload_from_json(self, json):
+        """Replace attributes from a dictionary."""
         for key, value in json.items():
             setattr(self, key, value)
