@@ -1,8 +1,14 @@
 #!/usr/bin/python3
-"""Append a string at the end of a file and return the number of characters written."""
+"""
+Module 2-append_write
+"""
 
 
 def append_write(filename="", text=""):
-    """Append text to a file and return number of characters written."""
-    with open(filename, "a", encoding="utf-8") as file:
-        return file.write(text)
+    """
+    Appends a string at the end of a text file
+    Returns the number of characters added
+    """
+
+    with open(filename, 'a', encoding="utf-8") as f:
+        return f.write(text)
