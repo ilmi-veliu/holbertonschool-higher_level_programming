@@ -7,9 +7,9 @@ class CustomObject:
 
     def __init__(self, name, age, is_student):
         """Initialize object with name, age, and is_student."""
-        self.__name = name
-        self.__age = age
-        self.__is_student = is_student
+        self.name = name
+        self.age = age
+        self.is_student = is_student
 
     def serialize(self, filename):
         """Serialize the object and save it to a file."""
@@ -23,14 +23,14 @@ class CustomObject:
     def deserialize(cls, filename):
         """Deserialize and return an object from a file."""
         try:
-            with open(filename, "rb") as panda:
-                pelo = pickle.load(panda)
-                return pelo
+            with open(filename, "rb") as file:
+                obj = pickle.load(file)
+                return obj
         except Exception:
             return None
 
     def display(self):
         """Print object attributes."""
-        print("Name:", self.__name)
-        print("Age:", self.__age)
-        print("Is Student:", self.__is_student)
+        print("Name:", self.name)
+        print("Age:", self.age)
+        print("Is Student:", self.is_student)
