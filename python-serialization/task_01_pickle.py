@@ -1,52 +1,36 @@
-#!/usr/bin/python3
-"""
-Module task_01_pickle
-"""
+#!/usr/bin/env python3
 import pickle
 
 
-class CustomObject():
-    """
-    Class to serialize object with pickle
-    """
+class CustomObject:
+    """Custom object with name, age, and student status."""
 
     def __init__(self, name, age, is_student):
-        """
-        This method initializes a student
-        """
-
+        """Initialize object with name, age, and is_student."""
         self.name = name
         self.age = age
         self.is_student = is_student
 
     def serialize(self, filename):
-        """
-        This method serializes a student
-        """
+        """Serialize the object and save it to a file."""
         try:
-            with open(filename, 'wb') as f:
-                pickle.dump(self, f)
-            return True
+            with open(filename, "wb") as file:
+                pickle.dump(self, file)
         except Exception:
             return None
 
     @classmethod
     def deserialize(cls, filename):
-        """
-        This method deserializes a file
-        """
-
+        """Deserialize and return an object from a file."""
         try:
-            with open(filename, 'rb') as f:
-                return pickle.load(f)
+            with open(filename, "rb") as file:
+                obj = pickle.load(file)
+                return obj
         except Exception:
             return None
 
     def display(self):
-        """
-        Display info
-        """
-
-        print("Name: {}".format(self.name))
-        print("Age: {}".format(self.age))
-        print("Is Student: {}".format(self.is_student))
+        """Print object attributes."""
+        print("Name:", self.name)
+        print("Age:", self.age)
+        print("Is Student:", self.is_student)
