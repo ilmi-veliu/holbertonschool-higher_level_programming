@@ -1,60 +1,59 @@
 #!/usr/bin/python3
 from flask import Flask, jsonify, request
 
-"""Initialize the Flask application"""
+# Création de l'application Flask
 app = Flask(__name__)
 
-"""A simple in-memory data store"""
-users = {}
-
-"""Root route that returns a welcome message"""
-
-
+# Route racine : renvoie un message de bienvenue
 @app.route("/")
 def home():
     return "Welcome to the Flask API!"
 
-
-# Route to return a list of usernames
+# Route de test : renvoie un dictionnaire sous forme de JSON
 @app.route("/data")
-def data():
-    return jsonify(list(users.keys()))
+def get_data():
+    sample_data = {
+        "name": "John",
+        "age": 30,
+        "city": "New York"
+    }
+    return jsonify(sample_data)
 
-
-# Route to return the API status
+# Route pour vérifier que l'API fonctionne
 @app.route("/status")
 def status():
-    return "OK", 200
+    return "OK"
 
+# Dictionnaire pour stocker les utilisateurs (base de données en mémoire)
+users = {}
 
-# Route to get user details by username
+# Route dynamique pour récupérer les infos d'un utilisateur
 @app.route("/users/<username>")
 def get_user(username):
-    user = users.get(username)
-    if user:
-        return jsonify({"username": username, **user})
+    if username in users:
+        return jsonify(users[username])
     else:
         return jsonify({"error": "User not found"}), 404
 
-
-# Route to add a new user via POST request
+# Route pour ajouter un utilisateur (POST uniquement)
 @app.route("/add_user", methods=["POST"])
 def add_user():
     data = request.get_json()
 
-    # Validate required field username
-    if not data or "username" not in data:
+    # Vérifie qu'un nom d'utilisateur a bien été envoyé
+    if "username" not in data:
         return jsonify({"error": "Username is required"}), 400
 
+    # Ajoute l'utilisateur dans le dictionnaire
     username = data["username"]
     users[username] = data
 
+    # Retourne une confirmation avec le code 201 (Created)
     return jsonify({
         "message": "User added",
-        "user": users[username]
+        "user": data
     }), 201
 
-
-# Run the Flask application if this file is executed directly
+# Démarrage du serveur sur le port 5050 avec le mode debug activé
 if __name__ == "__main__":
     app.run(debug=True)
