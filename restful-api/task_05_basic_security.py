@@ -140,5 +140,5 @@ def admin_only():
 
 # Run the Flask app
 
-if __name__ == '__min__':
+if __name__ == '__main__':
     app.run()
