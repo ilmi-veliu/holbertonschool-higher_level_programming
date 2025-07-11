@@ -1,2 +1,2 @@
-myVar = "Hello internet!"
+const myVar = "Hello internet!"
 console.log(myVar)
