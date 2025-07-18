@@ -62,3 +62,6 @@ def show_products():
             return render_template("product_display.html", error="Product not found")
 
     return render_template("product_display.html", products=data)
+
+if __name__ == "__main__":
+    app.run(debug=True)
