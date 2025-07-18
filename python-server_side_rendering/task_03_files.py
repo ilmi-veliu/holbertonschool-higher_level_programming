@@ -13,19 +13,25 @@ def show_product():
     data = []
 
     if source == "json":
-        with open('products.json', "r") as file:
-            data = json.load(file)
+        try:
+            with open('products.json', "r") as file:
+                data = json.load(file)
+        except FileNotFoundError:
+            return render_template("product_display.html", error="JSON file not found")
 
     elif source == "csv":
-        with open('products.csv', 'r') as f:
-            reader = csv.DictReader(f)
-            data = list(reader)
+        try:
+            with open('products.csv', 'r') as f:
+                reader = csv.DictReader(f)
+                data = list(reader)
+        except FileNotFoundError:
+            return render_template("product_display.html", error="CSV file not found")
 
     else:
         return render_template("product_display.html", error="Wrong source")
 
     if not id or id.strip() == "":
-        return render_template("product_display.html", error="Missing product ID")
+        return render_template("product_display.html", products=data)
 
     filtered = [product for product in data if str(product["id"]) == id]
 
@@ -33,3 +39,6 @@ def show_product():
         return render_template("product_display.html", error="Product not found")
     else:
         return render_template("product_display.html", products=filtered)
+
+if __name__ == "__main__":
+    app.run(debug=True)
